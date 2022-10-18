@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
+    <title>Fighting Game</title>
+  </head>
+  <body>
+    <div class="game-container">
+      <canvas></canvas>
+      <div class="gui">
+        <div class="hero-health">
+          <div class="hero-current-health"></div>
+        </div>
+        <div class="timer">10</div>
+        <div class="villian-health">
+          <div class="villian-current-health"></div>
+        </div>
+      </div>
+      <div class="game-over">Game Over</div>
+    </div>
+    <script src="./assets/js/global.js"></script>
+    <script src="./assets/js/classes/Map.js"></script>
+    <script src="./assets/js/classes/Sprite.js"></script>
+    <script src="./assets/js/classes/Fighter.js"></script>
+    <script src="./assets/js/keypress.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>

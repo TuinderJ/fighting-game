@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "silkscreen", sans-serif;
+}
+
+canvas {
+  --width: 80vw;
+  width: var(--width);
+  height: calc(var(--width) * 9 / 16);
+  border: 1px solid black;
+}
+
+.game-container {
+  margin-top: 0.25rem;
+  position: relative;
+}
+
+.gui {
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8%;
+}
+
+.gui > div {
+  height: 100%;
+}
+
+.timer {
+  background-color: blue;
+  height: 200% !important;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.hero-health,
+.villian-health {
+  background-color: red;
+  flex: 1;
+  position: relative;
+}
+
+.hero-current-health,
+.villian-current-health {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-color: limegreen;
+}
+
+.hero-current-health {
+  right: 0;
+}
+
+.game-over {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 500%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
