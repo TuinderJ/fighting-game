@@ -3,13 +3,12 @@ class Fighter extends Sprite {
     super(config);
     this.maxHealth = 100;
     this.health = 100;
-    this.strength = 5;
+    this.strength = 20;
     this.velocityX = 0;
     this.velocityY = 0;
     this.speed = 3;
     this.fighter = config.fighter;
     this.healthBar = document.querySelector(`.${this.fighter}-current-health`);
-    console.log(this.healthBar);
     this.x = fighters[this.fighter].x;
     this.y = fighters[this.fighter].y;
     this.xOffset = fighters[this.fighter].xOffset;
@@ -43,6 +42,23 @@ class Fighter extends Sprite {
   }
 
   update() {
+    // Death check
+    if (this.health === 0) this.isDead = true;
+
+    // Start death animation
+    if (this.isDead && this.state !== `death`) {
+      this.setState(`death`);
+      document.querySelector(`.game-over`).style.opacity = 1;
+      clearInterval(timer);
+    }
+
+    // Continue death animation and return
+    if (this.isDead && this.currentFrame < this.frames - 1) {
+      if (!(framesPast % animationSpeed)) this.currentFrame++;
+    }
+
+    if (this.isDead) return this.draw();
+
     // Handle keypresses
     if (keysPressed.includes(this.jumpKey) && this.feet === floor) this.velocityY = -4.5;
 
@@ -107,9 +123,7 @@ class Fighter extends Sprite {
         this.attackIsColliding = true;
         character.health -= this.strength;
         if (character.health < 0) character.health = 0;
-        // console.log(character.healthBar);
         character.healthBar.style.width = `${(character.health / character.maxHealth) * 100}%`;
-        // console.log(character.fighter, character.health);
         this.isAttacking = false;
       } else {
         this.attackIsColliding = false;

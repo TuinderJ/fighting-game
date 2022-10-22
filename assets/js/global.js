@@ -1,7 +1,7 @@
 let framesPast = 0;
 const gravity = 0.15;
 const floor = 127;
-const animationSpeed = 4;
+const animationSpeed = 5;
 
 const fighters = {
   hero: {

@@ -76,4 +76,7 @@ canvas {
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0;
+  z-index: 1;
+  transition: opacity;
+  transition-duration: 500ms;
 }
