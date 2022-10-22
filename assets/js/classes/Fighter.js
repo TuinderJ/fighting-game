@@ -3,7 +3,7 @@ class Fighter extends Sprite {
     super(config);
     this.maxHealth = 100;
     this.health = 100;
-    this.strength = 20;
+    this.strength = 5;
     this.velocityX = 0;
     this.velocityY = 0;
     this.speed = 3;
